@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "YottaDB Metrics Plugin",
+  "id": "ramsailopal-yottadbmetrics",
+  "metrics": true,
+  "info": {
+    "description": "YottaDB Metrics plugin",
+    "author": {
+      "name": "Raman Sailopal",
+      "url": ""
+    },
+    "keywords": [],
+    "logos": {
+      "small": "img/YottaDB_logo.svg",
+      "large": "img/YottaDB_logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/grafana-starter-datasource"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/grafana-starter-datasource/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "1.0.0",
+    "updated": "2022-05-13"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  }
+}
