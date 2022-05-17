@@ -2,6 +2,12 @@ import { DataQuery, DataSourceJsonData } from '@grafana/data';
 
 export interface MyQuery extends DataQuery {
   queryText?: string;
+  dbfunc?: string;
+  fdsep?: string;
+  datasep?: string;
+  fieldsep?: string;
+  recordsep?: string;
+  keyvalsep?: string;
 }
 
 export interface MyDataSourceOptions extends DataSourceJsonData {
@@ -15,4 +21,9 @@ export interface MyDataSourceOptions extends DataSourceJsonData {
 
 export const defaultQuery: Partial<MyQuery> = {
   queryText: 'CUM',
+  fdsep: '@',
+  datasep: ';',
+  fieldsep: ',',
+  recordsep: ';',
+  keyvalsep: '#',
 };
