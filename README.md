@@ -37,7 +37,7 @@ On first using the plugin as a datasource for a dashboard panel, the plugin will
  
  **NOTE - A higher count will effect performance**
  
- All other fields are specific to custom metrics
+ All other fields are specific to custom metrics. Details about these field are available on the Grafana backend server pages (linked above)
 
  # Custom Metrics
  
