@@ -16,7 +16,7 @@ This is a data source plugin for Grafana that pulls in cumulative and point in t
  
  This "front end" plugin relies on a YottaDB metrics back end server to operate. For details on setting up the back end server, please see here:
  
- http://github.com
+ https://github.com/RamSailopal/YottaDB-Grafana-Server
  
  
  
