@@ -9,6 +9,7 @@ This is a data source plugin for Grafana that pulls in cumulative and point in t
     cd /var/lib/grafana/plugins
     unzip /tmp/yottadbmetric.zip
     sed -i 's/^;allow_loading_unsigned_plugins =/allow_loading_unsigned_plugins = ramsailopal-yottadbmetrics/' /etc/grafana/grafana.ini
+    sed -i 's/^;enable_gzip = false/enable_gzip = true/' /etc/grafana/grafana.ini
     
  Restart YottaDB
  
