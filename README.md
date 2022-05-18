@@ -23,6 +23,14 @@ On first using the plugin as a datasource for a dashboard panel, the plugin will
  
  ![Alt text](Grafana-SET.JPG?raw=true "SET metric")
  
+ The field **CUM,POT or CUS** will dictate the catergory of metrics to attain:
+ 
+ **CUM** - Cumulative metrics over time
+ 
+ **POT** - Metrics over a single point of time
+ 
+ **CUS** - Custom metrics. Calling a specific function and routine to attain metrics.
+ 
  
  
  
