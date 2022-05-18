@@ -19,6 +19,11 @@ This is a data source plugin for Grafana that pulls in cumulative and point in t
  https://github.com/RamSailopal/YottaDB-Grafana-Server
  
  
+On first using the plugin as a datasource for a dashboard panel, the plugin will acculumate all cumulative metrics over time. In order to see specific metrics, click on the individual label as in the graphic below which show SET metrics
+ 
+ ![Alt text](Grafana-SET.JPG?raw=true "SET metric")
+ 
+ 
  
  
  
