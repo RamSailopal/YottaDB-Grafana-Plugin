@@ -43,6 +43,8 @@ On first using the plugin as a datasource for a dashboard panel, the plugin will
  
  Following on from the grafana-server README (linked above) An example of the use of custom metrics is shown in the link below:
  
+ [![IMAGE ALT TEXT HERE](https://i.ytimg.com/an_webp/sUF-Hgsrkiw/mqdefault_6s.webp?du=3000&sqp=CPCCk5QG&rs=AOn4CLCnBtoOGJzz8oc41JluCQL_s92tIg)](https://www.youtube.com/watch?v=sUF-Hgsrkiw)
+ 
  https://www.youtube.com/watch?v=sUF-Hgsrkiw
  
  As fields are type independant when first attained, they will need to be set from the default string type to time/numeric types with transformation/field conversion.
