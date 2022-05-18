@@ -32,7 +32,7 @@ On first using the plugin as a datasource for a dashboard panel, the plugin will
  
  The field **YottaDB region** will dictate the YottaDB region to attain metrics for. Left blank, the region will be the default, **DEFAULT** region
 
- The **Number of records to attain** field will dictate how many records are "pulled" from the back end API server. 
+ The **Number of records to attain** field will dictate how many records are "pulled" from the back end API server. Enter **all** for all available data. 
  
  **NOTE - A higher count will effect performance**
  
