@@ -5,7 +5,7 @@ This is a data source plugin for Grafana that pulls in cumulative and point in t
 # Installation in Grafana
 
     cd /tmp
-    wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1xE9EvVIyLINiIH-kbEcF_mBQf0bsohKf&confirm=t' -O 'yottadbmetric.zip'
+    wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1OPAP8jBGJGvHlBeGnr3OcPJGemW173wQ&confirm=t' -O 'yottadbmetric.zip'
     cd /var/lib/grafana/plugins
     unzip /tmp/yottadbmetric.zip
     sed -i 's/^;allow_loading_unsigned_plugins =/allow_loading_unsigned_plugins = ramsailopal-yottadbmetrics/' /etc/grafana/grafana.ini
