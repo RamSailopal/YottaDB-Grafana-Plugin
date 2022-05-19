@@ -1,16 +1,17 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "datasource",
-  "name": "YottaDB Metrics Plugin",
-  "id": "ramsailopal-yottadbmetrics",
+  "name": "YottaDB",
+  "id": "ramsailopal-yottadb-datasource",
   "metrics": true,
   "info": {
-    "description": "YottaDB Metrics plugin",
+    "description": "YottaDB plugin",
     "author": {
       "name": "Raman Sailopal",
-      "url": ""
+      "email": "thelinuxguys@yahoo.com",
+      "url": "https://github.com/RamSailopal"
     },
-    "keywords": [],
+    "keywords": ["database", "yottadb"],
     "logos": {
       "small": "img/YottaDB_logo.svg",
       "large": "img/YottaDB_logo.svg"
@@ -18,14 +19,19 @@
     "links": [
       {
         "name": "Website",
-        "url": "https://github.com/grafana/grafana-starter-datasource"
+        "url": "https://github.com/RamSailopal/YottaDB-Grafana-Plugin"
       },
       {
         "name": "License",
-        "url": "https://github.com/grafana/grafana-starter-datasource/blob/master/LICENSE"
+        "url": "https://github.com/RamSailopal/YottaDB-Grafana-Plugin/LICENSE"
       }
     ],
-    "screenshots": [],
+    "screenshots": [
+      {
+        "name": "SET statistics",
+        "path": "img/Grafana-SET.JPG"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
