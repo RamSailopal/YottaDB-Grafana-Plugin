@@ -28,6 +28,15 @@ export class ConfigEditor extends PureComponent<Props, State> {
     onOptionsChange({ ...options, jsonData });
   };
 
+  onWebTChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { onOptionsChange, options } = this.props;
+    const jsonData = {
+      ...options.jsonData,
+      WebT: event.target.value,
+    };
+    onOptionsChange({ ...options, jsonData });
+  };
+
   render() {
     const { options } = this.props;
     const { jsonData } = options;
@@ -35,6 +44,14 @@ export class ConfigEditor extends PureComponent<Props, State> {
     return (
       <div className="gf-form-group">
         <div className="gf-form">
+          <FormField
+            label="http/https"
+            labelWidth={15}
+            inputWidth={5}
+            onChange={this.onWebTChange}
+            value={jsonData.WebT || ''}
+            placeholder="http"
+          />
           <FormField
             label="YottaDB Metrics Server Address"
             labelWidth={15}

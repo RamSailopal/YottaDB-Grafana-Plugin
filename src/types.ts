@@ -8,11 +8,14 @@ export interface MyQuery extends DataQuery {
   fieldsep?: string;
   recordsep?: string;
   keyvalsep?: string;
+  reccnt?: string;
+  region?: string;
 }
 
 export interface MyDataSourceOptions extends DataSourceJsonData {
   Server?: string;
   Port?: string;
+  WebT?: string;
 }
 
 /**
@@ -26,4 +29,6 @@ export const defaultQuery: Partial<MyQuery> = {
   fieldsep: ',',
   recordsep: ';',
   keyvalsep: '#',
+  reccnt: '60',
+  region: 'DEFAULT',
 };

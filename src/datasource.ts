@@ -13,12 +13,14 @@ import { MyQuery, MyDataSourceOptions } from './types';
 export class DataSource extends DataSourceApi<MyQuery, MyDataSourceOptions> {
   Server: string;
   Port: string;
+  WebT: string;
 
   constructor(instanceSettings: DataSourceInstanceSettings<MyDataSourceOptions>) {
     super(instanceSettings);
 
     this.Server = instanceSettings.jsonData.Server || 'localhost';
     this.Port = instanceSettings.jsonData.Port || '5000';
+    this.WebT = instanceSettings.jsonData.WebT || 'http';
   }
 
   async doRequest(query: MyQuery) {
@@ -27,7 +29,9 @@ export class DataSource extends DataSourceApi<MyQuery, MyDataSourceOptions> {
     var fieldsep = query.fieldsep || ',';
     var recordsep = query.recordsep || ';';
     var keyvalsep = query.keyvalsep || '#';
+    var reccnt = query.reccnt || '60';
     var rout = 'CUM';
+    var region = query.region || 'DEFAULT';
     if (query.queryText !== 'POT' && query.queryText !== 'CUM' && query.queryText !== 'CUS') {
       rout = 'CUM';
     } else {
@@ -36,14 +40,15 @@ export class DataSource extends DataSourceApi<MyQuery, MyDataSourceOptions> {
     if (rout === 'POT' || rout === 'CUM') {
       const result = await getBackendSrv().datasourceRequest({
         method: 'GET',
-        url: 'http://' + this.Server + ':' + this.Port + '/' + rout,
+        url: this.WebT + '://' + this.Server + ':' + this.Port + '/' + rout + '?cnt=' + reccnt + '&region=' + region,
       });
       return result;
     } else {
       const result = await getBackendSrv().datasourceRequest({
         method: 'GET',
         url:
-          'http://' +
+          this.WebT +
+          '://' +
           this.Server +
           ':' +
           this.Port +

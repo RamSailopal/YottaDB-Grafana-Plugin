@@ -39,16 +39,26 @@ export class QueryEditor extends PureComponent<Props> {
     const { onChange, query } = this.props;
     onChange({ ...query, keyvalsep: event.target.value });
   };
+  onreccntChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { onChange, query } = this.props;
+    onChange({ ...query, reccnt: event.target.value });
+  };
+  onregionChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { onChange, query } = this.props;
+    onChange({ ...query, region: event.target.value });
+  };
+
   render() {
     const query = defaults(this.props.query);
-    const { queryText, dbfunc, fdsep, datasep, fieldsep, recordsep, keyvalsep } = query;
+    const { queryText, dbfunc, fdsep, datasep, fieldsep, recordsep, keyvalsep, reccnt, region } = query;
     return (
       <div className="gf-form">
         <div>
           <p style={{ marginInline: '30px', marginBlock: '15px', textAlign: 'center' }}>
             <p>
               <b>
-                Additional information for configuration of Custom metrics is available by clicking the button below.
+                Additional information about the metrics and configuration of Custom metrics is available by clicking
+                the buttons below.
               </b>
             </p>
             <LinkButton
@@ -59,7 +69,17 @@ export class QueryEditor extends PureComponent<Props> {
               rel="noreferrer"
               style={{ marginInlineEnd: '5px' }}
             >
-              Click here plugin documentation website
+              Click here for plugin documentation website
+            </LinkButton>
+            <LinkButton
+              variant="secondary"
+              size="md"
+              target="_blank"
+              href="https://docs.yottadb.com/ProgrammersGuide/commands.html#zshow"
+              rel="noreferrer"
+              style={{ marginInlineEnd: '5px' }}
+            >
+              Click here for metrics explanation
             </LinkButton>
           </p>
         </div>
@@ -68,8 +88,18 @@ export class QueryEditor extends PureComponent<Props> {
             labelWidth={15}
             value={queryText || ''}
             onChange={this.onQueryTextChange}
-            label="Enter CUM,POT,CUS"
-            tooltip="Enter either CUM for cumulative metrics over time, POT for metrics over a single period of time, or CUS for custom metrics (data attained from according to the function/routine entered in the next field)"
+            label="CUM,POT or CUS"
+            placeholder="CUM"
+            inputWidth={4}
+            tooltip="Enter either CUM for cumulative metrics over time, POT for metrics over a single period of time, or CUS for custom metrics (data attained according to the function/routine entered in the function/routine field)"
+          />
+          <FormField
+            labelWidth={15}
+            value={region || ''}
+            onChange={this.onregionChange}
+            label="YottaDB region"
+            placeholder="DEFAULT"
+            tooltip="Enter region to attain metrics from (only for CUM and POT)"
           />
           <FormField
             labelWidth={15}
@@ -80,40 +110,58 @@ export class QueryEditor extends PureComponent<Props> {
           />
           <FormField
             labelWidth={15}
+            value={reccnt}
+            onChange={this.onreccntChange}
+            label="Number of records to attain"
+            placeholder="60"
+            tooltip="Only used with CUM and POT metrics. Use 'all' for all available records. Please note that the higher the entry, the longer the time taken to attain the data"
+          />
+          <FormField
+            labelWidth={15}
+            inputWidth={3}
             value={fdsep || ''}
             onChange={this.onfdsepChange}
-            label="Field/data seperator for CUS"
-            tooltip="Only used with CUS for metrics. The symbol that seperates the fields from the data"
+            label="Field/data separator for CUS"
+            placeholder="@"
+            tooltip="Only used with CUS for metrics. The symbol that separates the fields from the data"
           />
         </div>
         <div>
           <FormField
             labelWidth={15}
+            inputWidth={3}
             value={datasep || ''}
             onChange={this.ondatasepChange}
-            label="Data seperator for CUS"
-            tooltip="Only used with CUS for metrics. The symbol that seperates the data columns"
+            label="Data separator for CUS"
+            placeholder=","
+            tooltip="Only used with CUS for metrics. The symbol that separates the data columns"
           />
           <FormField
             labelWidth={15}
+            inputWidth={3}
             value={fieldsep || ''}
             onChange={this.onfieldsepChange}
-            label="Field seperator for CUS"
-            tooltip="Only used with CUS for metrics. The symbol that seperates the field columns"
+            label="Field separator for CUS"
+            placeholder=","
+            tooltip="Only used with CUS for metrics. The symbol that separates the field columns"
           />
           <FormField
             labelWidth={15}
+            inputWidth={3}
             value={recordsep || ''}
             onChange={this.onrecordsepChange}
-            label="Record seperator for CUS"
-            tooltip="Only used with CUS for metrics. The symbol that seperates each row"
+            label="Record separator for CUS"
+            placeholder=";"
+            tooltip="Only used with CUS for metrics. The symbol that separates each row"
           />
           <FormField
             labelWidth={15}
+            inputWidth={3}
             value={keyvalsep || ''}
             onChange={this.onkeyvalsepChange}
-            label="Key/value seperator for CUS"
-            tooltip="Only used with CUS for metrics. The symbol that seperates the key from the value for each entry"
+            label="Key/value separator for CUS"
+            placeholder="#"
+            tooltip="Only used with CUS for metrics. The symbol that separates the key from the value for each entry"
           />
         </div>
       </div>
