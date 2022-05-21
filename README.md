@@ -47,4 +47,12 @@ On first using the plugin as a datasource for a dashboard panel, the plugin will
 
  
  As fields are type independant when first attained, they will need to be set from the default string type to time/numeric types with transformation/field conversion.
+
+# Demo
+
+A gitpod demo of the plugin is available here:
+
+https://github.com/RamSailopal/Grafana-YottaDB-demo
+
+
  
